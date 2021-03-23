@@ -1,0 +1,59 @@
+
+
+<div class="container mb-4" >
+  <h4>List of Customers</h4>
+  <div class="panel panel-default">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Customer</th>         
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers let i=index">
+          <th scope="row">{{ i + 1 }}</th>
+
+          <td>{{customer.name}}</td>
+          <td> <button (click)="deleteCustomer(customer.name)">Delete</button></td>
+          <td>{{ u.name}}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container" *ngIf="universities.length>0">
+  <h2>All Universities</h2>
+  <div class="panel panel-default">
+   
+  
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Web Pages</th>
+          <th scope="col">Country</th>
+          <th scope="col">Name</th>
+          <th scope="col">Alpha Two Code</th>
+          <th scope="col">Domains</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of universities index as i">
+          <th scope="row">{{ i + 1 }}</th>
+
+          <td>{{ u.web_pages}}</td>
+          <td>{{ u.country}}</td>
+          <td>{{ u.name}}</td>
+          <td>{{ u.alpha_two_code}}</td>
+
+          <td *ngFor="let d of u.domains; index as i">{{d}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
